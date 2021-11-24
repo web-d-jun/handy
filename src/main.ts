@@ -1,13 +1,13 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-library.add(faUserSecret);
+import { createApp } from 'vue';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import App from './App.vue';
 
+library.add(faUserSecret);
 
 const app = createApp(App);
 
-app.component("font-awesome-icon", FontAwesomeIcon);
+app.component('font-awesome-icon', FontAwesomeIcon);
 
-app.mount("#app");
+app.mount('#app');
