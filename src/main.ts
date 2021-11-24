@@ -8,6 +8,6 @@ library.add(faUserSecret);
 
 const app = createApp(App);
 
-app.component('font-awesome-icon', FontAwesomeIcon);
+app.component('FontAwesomeIcon', FontAwesomeIcon);
 
 app.mount('#app');
