@@ -6,7 +6,6 @@ import eslintPlugin from 'vite-plugin-eslint';
 export default defineConfig({
   plugins: [vue(), eslintPlugin()],
   build: {
-    cssTarget: 'esnext',
     minify: 'terser',
     cssCodeSplit: true,
   },
