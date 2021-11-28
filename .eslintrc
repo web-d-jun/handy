@@ -5,12 +5,47 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["plugin:vue/vue3-recommended", "eslint:recommended", "@vue/typescript/recommended", "airbnb-base", "prettier"],
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "@vue/typescript/recommended",
+    "airbnb-base",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaVersion": 2021
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
   "plugins": [],
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ],
+    "@typescript-eslint/ban-ts-comment": "off",
+    "no-console": "off"
   }
 }

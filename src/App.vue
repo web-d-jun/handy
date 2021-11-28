@@ -1,19 +1,31 @@
 <template>
   <div>
     <router-link to="/testVue">testVue</router-link>
-    <Suspense>
+    <suspense>
       <template #default>
-        <router-view></router-view>
+        <router-view v-slot="{ Component, route }">
+          <transition :name="route.meta.transition || 'fade'" mode="out-in">
+            <keep-alive>
+              <component :is="Component" />
+            </keep-alive>
+          </transition>
+        </router-view>
       </template>
       <template #fallback>
         <div>...loading</div>
       </template>
-    </Suspense>
+    </suspense>
   </div>
-
 </template>
 
-<script setup lang='ts'></script>
-<style scoped>
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-</style>
+export default defineComponent({
+  name: 'App',
+  setup() {
+    return {};
+  },
+});
+</script>
+<style scoped></style>

@@ -11,9 +11,12 @@
     "esModuleInterop": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
+    "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "lib": [
       "dom",
@@ -22,6 +25,13 @@
       "es2015.promise"
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
