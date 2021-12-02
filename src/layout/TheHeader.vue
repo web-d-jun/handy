@@ -1,6 +1,6 @@
 <template>
-  <header class="text-gray-600">
-    <div class='w-full mx-auto'>container</div>
+  <header>
+    <div class='w-full p-4'>header</div>
   </header>
 </template>
 <script lang="ts">
