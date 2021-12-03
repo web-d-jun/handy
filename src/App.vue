@@ -1,22 +1,24 @@
 <template>
   <div class="flex h-screen">
     <TheLeftMenu />
-    <div class='w-full'>
+    <div class="w-full">
       <TheHeader />
-      <suspense>
-        <template #default>
-          <router-view v-slot="{ Component, route }">
-            <transition :name="route.meta.transition || 'fade'" mode="out-in">
-              <keep-alive>
-                <component :is="Component" />
-              </keep-alive>
-            </transition>
-          </router-view>
-        </template>
-        <template #fallback>
-          <div>...loading</div>
-        </template>
-      </suspense>
+      <main class='view-page w-full h-full'>
+        <suspense>
+          <template #default>
+            <router-view v-slot="{ Component, route }">
+              <transition :name="route.meta.transition || 'fade'" mode="out-in">
+                <keep-alive>
+                  <component :is="Component" />
+                </keep-alive>
+              </transition>
+            </router-view>
+          </template>
+          <template #fallback>
+            <div>...loading</div>
+          </template>
+        </suspense>
+      </main>
     </div>
   </div>
 </template>

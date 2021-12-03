@@ -4,7 +4,7 @@ import testVue from './views/testVue.vue';
 const routes = [
   { path: '/home', redirect: '/' },
   {
-    path: '/testVue',
+    path: '/',
     component: testVue,
   },
 ];
