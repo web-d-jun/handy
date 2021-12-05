@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class='w-full p-4'>header</div>
+    <div class="w-full p-4 shadow">header</div>
   </header>
 </template>
 <script lang="ts">

@@ -1,6 +1,6 @@
 <template>
-  <div class="app-button p-3">
-    <a href="/ai">
+  <div class="app-button p-3 cursor-pointer">
+    <a :href="`${$attrs.link}`">
       {{ $attrs.name }}
     </a>
   </div>
@@ -20,6 +20,5 @@ export default defineComponent({
 </script>
 <style scoped>
 .app-button {
-  border: 1px solid;
 }
 </style>
