@@ -1,7 +1,7 @@
 <template>
-  <div class="w-1/4 h-full flex flex-col left-menu">
+  <div class="w-1/5 h-full flex flex-col left-menu sticky h-screen overflow-y-auto left-0 top-0">
     <div v-for="(item, index) in menu" :key="index">
-      <AppButton />
+      <AppButton v-bind="item" />
     </div>
   </div>
 </template>
@@ -27,6 +27,5 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .left-menu {
-  border: 1px solid;
 }
 </style>

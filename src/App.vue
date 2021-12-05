@@ -1,9 +1,9 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex">
     <TheLeftMenu />
     <div class="w-full">
       <TheHeader />
-      <main class='view-page w-full h-full'>
+      <main class='view-page w-full'>
         <suspense>
           <template #default>
             <router-view v-slot="{ Component, route }">

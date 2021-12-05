@@ -1,5 +1,9 @@
 <template>
-  <div class="app-button">button</div>
+  <div class="app-button p-3">
+    <a href="/ai">
+      {{ $attrs.name }}
+    </a>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -7,12 +11,15 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'AppButton',
   setup() {
-    const menu = {
-
-    }
+    const menu = {};
     return {
-      menu
-    }
-  }
+      menu,
+    };
+  },
 });
 </script>
+<style scoped>
+.app-button {
+  border: 1px solid;
+}
+</style>
