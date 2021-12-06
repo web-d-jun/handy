@@ -7,6 +7,9 @@ module.exports = {
     //   laptop: '1024px',
     //   desktop: '1280px',
     // },
+    textColor: {
+      white: '#fff',
+    },
     extend: {},
   },
   variants: {
