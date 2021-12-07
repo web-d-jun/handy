@@ -32,7 +32,6 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vitejs/plugin-vue": "^1.9.4",
-    "autoprefixer": "^10.4.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -46,5 +45,9 @@
     "typescript": "^4.5.2",
     "vite": "^2.6.14",
     "vue-tsc": "^0.29.2"
-  }
+  },
+  "browserslist": [
+    "> 2%",
+    "last 2 version"
+  ]
 }
