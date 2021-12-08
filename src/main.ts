@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import { router } from './router';
 import './index.css';
 
-library.add(faUserSecret);
+library.add(faUserSecret, faBars);
 
 const app = createApp(App);
 
