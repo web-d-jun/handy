@@ -8,6 +8,9 @@ import {
   faFileContract,
   faFileImage,
   faShippingFast,
+  faAddressBook,
+  faUsers,
+  faStoreAlt
 } from '@fortawesome/free-solid-svg-icons';
 import {} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faComments, faListAlt } from '@fortawesome/free-regular-svg-icons';
@@ -27,6 +30,9 @@ library.add(
   faShippingFast,
   faComments,
   faListAlt,
+  faAddressBook,
+  faUsers,
+  faStoreAlt
 );
 
 const app = createApp(App);

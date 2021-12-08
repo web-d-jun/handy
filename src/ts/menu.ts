@@ -19,7 +19,7 @@ const menu: Menu[] = [
     type: 'nav',
   },
   {
-    name: '무제',
+    name: 'A.I',
     subName: '',
     type: 'title',
   },
@@ -87,31 +87,31 @@ const menu: Menu[] = [
     type: 'nav',
   },
   {
-    name: '무제',
+    name: '관리',
     subName: '',
     type: 'title',
   },
   {
     name: '고객관리',
     link: '/group-manage',
-    icon: [''],
+    icon: ['fas', 'address-book'],
     type: 'nav',
   },
   {
     name: '고객분포',
     link: '/distribution',
-    icon: [''],
+    icon: ['fas', 'users'],
     type: 'nav',
   },
   {
-    name: '무제',
+    name: '설정',
     subName: '',
     type: 'title',
   },
   {
     name: '매장정보',
     link: 'store-info',
-    icon: [''],
+    icon: ['fas', 'store-alt'],
     type: 'nav',
   },
 ];
