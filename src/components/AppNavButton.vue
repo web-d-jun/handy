@@ -1,10 +1,13 @@
 <template>
   <div class="app-button-container mb-1.5">
     <div class="app-button-wrap px-3">
-      <div class="app-button p-3 cursor-pointer hover:bg-white hover:bg-opacity-20 rounded" :class="{ active: $attrs.link === $route.path }">
+      <div
+        class="app-button p-3 cursor-pointer hover:bg-white hover:bg-opacity-20 rounded"
+        :class="{ active: $attrs.link === $route.path }"
+      >
         <router-link :to="`${$attrs.link}`">
-          <div class="menu-title text-white opacity-80 text-sm font-mono">
-            <span><FontAwesomeIcon :icon="['fas', 'bars']" class="mr-2" /></span><span>{{ $attrs.name }}</span>
+          <div class="menu-title text-white opacity-80 text-base font-mono">
+            <span><FontAwesomeIcon :icon="[$attrs.icon[0], $attrs.icon[1]]" class="mr-2" /></span><span>{{ $attrs.name }}</span>
           </div>
         </router-link>
       </div>

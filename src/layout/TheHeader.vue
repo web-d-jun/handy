@@ -16,6 +16,5 @@ export default defineComponent({
 </script>
 <style scoped lang="scss">
 .bar-btn {
-
 }
 </style>

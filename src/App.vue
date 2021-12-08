@@ -3,7 +3,7 @@
     <TheLeftMenu />
     <div class="w-full">
       <TheHeader />
-      <main class='view-page w-full'>
+      <main class="view-page w-full">
         <suspense>
           <template #default>
             <router-view v-slot="{ Component, route }">
