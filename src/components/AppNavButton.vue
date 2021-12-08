@@ -27,7 +27,10 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped>
+<style scoped lang="scss">
 .app-button {
+  &.active {
+    @apply bg-white bg-opacity-20;
+  }
 }
 </style>
