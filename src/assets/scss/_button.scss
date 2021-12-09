@@ -1,0 +1,16 @@
+.btn-primary {
+  background-image: linear-gradient(to right, #5C6F78, $secondary, #7C95A1, #414E54);
+  background-size: 300% 100%;
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.btn-active {
+  &:active {
+    transform: scale(0.95);
+  }
+}
