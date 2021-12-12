@@ -20,50 +20,86 @@ const routes = [
   {
     path: '/dashboard',
     component: DashBoard,
+    meta: {
+      title: '대쉬보드',
+    },
   },
   {
     path: '/ai',
     component: Ai,
+    meta: {
+      title: '인공지능',
+    },
   },
   {
     path: '/sendSms',
     component: SendSms,
+    meta: {
+      title: '일반문자',
+    },
   },
   {
     path: '/event',
     component: Event,
+    meta: {
+      title: '스마트전단',
+    },
   },
   {
     path: '/pop',
     component: Pop,
+    meta: {
+      title: 'POP',
+    },
   },
   {
     path: '/tery-mall',
     component: TeryMall,
+    meta: {
+      title: '테리몰',
+    },
   },
   {
     path: '/tery-chat',
     component: TeryChat,
+    meta: {
+      title: '채팅',
+    },
   },
   {
     path: '/best-mall',
     component: BestMall,
+    meta: {
+      title: '무조건팔린다',
+    },
   },
   {
     path: '/all-history',
     component: AllHistory,
+    meta: {
+      title: '내역',
+    },
   },
   {
     path: '/group-manage',
     component: GroupManage,
+    meta: {
+      title: '고객관리',
+    },
   },
   {
     path: '/distribution',
     component: CustomerDistribution,
+    meta: {
+      title: '고객분포',
+    },
   },
   {
     path: '/store-info',
     component: StoreInfo,
+    meta: {
+      title: '매장정보',
+    },
   },
 ];
 export const routerHistory = createWebHistory();
@@ -71,4 +107,8 @@ export const router = createRouter({
   history: routerHistory,
   strict: true,
   routes,
+});
+
+router.afterEach((to, from) => {
+  console.log(to, from);
 });
