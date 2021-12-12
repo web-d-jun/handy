@@ -1,16 +1,16 @@
 <template>
   <div class="app-button-container mb-1.5">
     <div class="app-button-wrap px-3">
-      <div
-        class="app-button p-3 cursor-pointer hover:bg-white hover:bg-opacity-20 rounded"
-        :class="{ active: $attrs.link === $route.path }"
-      >
-        <router-link :to="`${$attrs.link}`">
+      <router-link :to="`${$attrs.link}`">
+        <div
+          class="app-button p-3 cursor-pointer hover:bg-white hover:bg-opacity-20 rounded"
+          :class="{ active: $attrs.link === $route.path }"
+        >
           <div class="menu-title text-white opacity-80 text-base font-mono">
-            <span><FontAwesomeIcon :icon="[$attrs.icon[0], $attrs.icon[1]]" class="mr-2" /></span><span>{{ $attrs.name }}</span>
+            <span><FontAwesomeIcon :icon="[icon[0], icon[1]]" class="mr-2" /></span><span>{{ $attrs.name }}</span>
           </div>
-        </router-link>
-      </div>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -19,10 +19,12 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'AppNavButton',
-  setup() {
+  setup(props, { attrs }) {
+    const icon = attrs.icon as string;
     const menu = {};
     return {
       menu,
+      icon,
     };
   },
 });

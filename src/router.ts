@@ -109,6 +109,12 @@ export const router = createRouter({
   routes,
 });
 
-router.afterEach((to, from) => {
-  console.log(to, from);
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string;
+  }
+}
+
+router.afterEach(to => {
+  document.title = to.meta.title || 'Handy App';
 });
