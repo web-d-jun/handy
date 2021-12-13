@@ -10,10 +10,11 @@ import {
   faShippingFast,
   faAddressBook,
   faUsers,
-  faStoreAlt
+  faStoreAlt,
+  faSignInAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import {} from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faComments, faListAlt } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelope, faComments, faListAlt, faBell, faUserCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 import { router } from './router';
@@ -32,7 +33,10 @@ library.add(
   faListAlt,
   faAddressBook,
   faUsers,
-  faStoreAlt
+  faStoreAlt,
+  faSignInAlt,
+  faBell,
+  faUserCircle,
 );
 
 const app = createApp(App);
