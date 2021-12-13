@@ -5,13 +5,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "plugin:vue/vue3-recommended",
-    "eslint:recommended",
-    "@vue/typescript/recommended",
-    "airbnb-base",
-    "prettier"
-  ],
+  "extends": ["plugin:vue/vue3-recommended", "eslint:recommended", "@vue/typescript/recommended", "airbnb-base", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2021
   },
@@ -19,12 +13,7 @@
     "import/resolver": {
       "typescript": {},
       "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
   },
