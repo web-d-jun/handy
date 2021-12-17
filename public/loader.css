@@ -19,7 +19,7 @@
 }
 
 .ball-pulse > div {
-    background-color: blue;
+    background-color: #fff;
     width: 15px;
     height: 15px;
     border-radius: 100%;
@@ -54,11 +54,18 @@
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    background-color: #404d53;
 }
 
-.loader-container .loader-inner {
+.loader-container .loader-contents {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loader-contents .image-logo {
+    width: 150px;
+    border-radius: 50%;
 }
