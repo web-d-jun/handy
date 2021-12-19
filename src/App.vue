@@ -27,6 +27,7 @@
 import { defineComponent } from 'vue';
 import TheHeader from '@/layout/TheHeader.vue';
 import TheLeftMenu from '@/layout/TheLeftMenu.vue';
+import { getUsers2 } from '@/api/testApi';
 
 export default defineComponent({
   name: 'App',
@@ -35,6 +36,12 @@ export default defineComponent({
     TheLeftMenu,
   },
   setup() {
+    const getApi2 = async () => {
+      const users = await getUsers2();
+      console.log(users);
+    };
+    getApi2();
+
     return {};
   },
 });
