@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="w-full p-3 shadow flex">
-      <AppIconButton>
+      <AppIconButton @click="handleMenuBar">
         <template #icon>
           <FontAwesomeIcon :icon="['fas', 'bars']" />
         </template>
@@ -23,13 +23,31 @@
   </header>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import AppIconButton from '@/components/AppIconButton.vue';
 
 export default defineComponent({
   name: 'TheHeader',
   components: {
     AppIconButton,
+  },
+  setup() {
+    const openLeftMenuBar = ref(false);
+
+    const handleMenuBar = () => {
+      openLeftMenuBar.value = !openLeftMenuBar.value;
+      console.log('handleMenuBar', openLeftMenuBar.value);
+      const leftMenuBar = document.querySelector('.left-menu');
+      if (openLeftMenuBar.value) {
+        leftMenuBar?.classList.add('opened');
+      } else {
+        leftMenuBar?.classList.remove('opened');
+      }
+      console.log(leftMenuBar);
+    };
+    return {
+      handleMenuBar,
+    };
   },
 });
 </script>
