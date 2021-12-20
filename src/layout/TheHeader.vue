@@ -23,7 +23,7 @@
   </header>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import AppIconButton from '@/components/AppIconButton.vue';
 
 export default defineComponent({
@@ -36,15 +36,18 @@ export default defineComponent({
 
     const handleMenuBar = () => {
       openLeftMenuBar.value = !openLeftMenuBar.value;
-      console.log('handleMenuBar', openLeftMenuBar.value);
+      // console.log('handleMenuBar', openLeftMenuBar.value);
       const leftMenuBar = document.querySelector('.left-menu');
       if (openLeftMenuBar.value) {
         leftMenuBar?.classList.add('opened');
       } else {
         leftMenuBar?.classList.remove('opened');
       }
-      console.log(leftMenuBar);
+      // console.log(leftMenuBar);
     };
+    onMounted(() => {
+      handleMenuBar();
+    });
     return {
       handleMenuBar,
     };

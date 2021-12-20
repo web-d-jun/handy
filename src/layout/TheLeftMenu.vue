@@ -37,10 +37,14 @@ export default defineComponent({
   background-color: $secondary;
   @apply w-full h-full flex flex-col fixed h-screen overflow-y-auto right-0 left-0 top-0;
   @apply md:w-1/5 md:sticky;
-  @apply transition duration-500 ease-in-out;
+
   &:not(.opened) {
     transform: translateX(-100%);
     @apply fixed;
+  }
+
+  &.opened {
+    @apply transition duration-500 ease-in-out;
   }
 
   & .nav-title {

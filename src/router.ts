@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
 import DashBoard from '@/views/TheDashboard.vue';
 import Ai from '@/views/TheAi.vue';
 import SendSms from '@/views/TheSendSms.vue';
@@ -12,6 +12,16 @@ import GroupManage from '@/views/TheGroupManage.vue';
 import CustomerDistribution from '@/views/TheDistribution.vue';
 import StoreInfo from '@/views/TheStoreInfo.vue';
 
+const requireAuth = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
+  const accessToken = localStorage.getItem('accessToken') || 'bad';
+  if (accessToken === 'good') {
+    next();
+  } else {
+    alert('로그인 유효기간이 지났습니다.');
+    next('/login');
+  }
+};
+
 const routes = [
   {
     path: '/',
@@ -20,6 +30,7 @@ const routes = [
   {
     path: '/dashboard',
     component: DashBoard,
+    beforeEnter: requireAuth,
     meta: {
       title: '대쉬보드',
     },
