@@ -11,6 +11,7 @@ import AllHistory from '@/views/TheAllHistory.vue';
 import GroupManage from '@/views/TheGroupManage.vue';
 import CustomerDistribution from '@/views/TheDistribution.vue';
 import StoreInfo from '@/views/TheStoreInfo.vue';
+import Login from '@/views/TheLogin.vue';
 
 const requireAuth = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const accessToken = localStorage.getItem('accessToken') || 'bad';
@@ -26,6 +27,13 @@ const routes = [
   {
     path: '/',
     redirect: '/dashboard',
+  },
+  {
+    path: '/login',
+    component: Login,
+    meta: {
+      title: '로그인',
+    },
   },
   {
     path: '/dashboard',
