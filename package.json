@@ -22,6 +22,7 @@
     "@vue/eslint-config-typescript": "^9.1.0",
     "axios": "^0.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "faker": "^5.5.3",
     "install-peerdeps": "^3.0.3",
     "loaders.css": "^0.1.2",
     "path": "^0.12.7",
@@ -30,6 +31,7 @@
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@types/faker": "^5.5.9",
     "@types/node": "^16.11.10",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
