@@ -14,7 +14,7 @@ const menu: Menu[] = [
   },
   {
     name: '대쉬보드',
-    link: '/dashboard',
+    link: '/v1/dashboard',
     icon: ['fas', 'chart-bar'],
     type: 'nav',
   },
@@ -25,7 +25,7 @@ const menu: Menu[] = [
   },
   {
     name: '인공지능',
-    link: '/ai',
+    link: '/v1/ai',
     icon: ['fas', 'brain'],
     type: 'nav',
   },
@@ -36,19 +36,19 @@ const menu: Menu[] = [
   },
   {
     name: '일반문자',
-    link: '/sendSms',
+    link: '/v1/sendSms',
     icon: ['far', 'envelope'],
     type: 'nav',
   },
   {
     name: '스마트전단문자',
-    link: '/event',
+    link: '/v1/event',
     icon: ['fas', 'file-contract'],
     type: 'nav',
   },
   {
     name: '스마트POP',
-    link: '/pop',
+    link: '/v1/pop',
     icon: ['fas', 'file-image'],
     type: 'nav',
   },
@@ -59,19 +59,19 @@ const menu: Menu[] = [
   },
   {
     name: '테리주문',
-    link: '/tery-mall',
+    link: '/v1/tery-mall',
     icon: ['fas', 'shipping-fast'],
     type: 'nav',
   },
   {
     name: '테리채팅',
-    link: '/tery-chat',
+    link: '/v1/tery-chat',
     icon: ['far', 'comments'],
     type: 'nav',
   },
   {
     name: '무조건팔린다',
-    link: '/best-mall',
+    link: '/v1/best-mall',
     icon: ['fas', 'shipping-fast'],
     type: 'nav',
   },
@@ -82,7 +82,7 @@ const menu: Menu[] = [
   },
   {
     name: '충전/사용/카드',
-    link: '/all-history',
+    link: '/v1/all-history',
     icon: ['far', 'list-alt'],
     type: 'nav',
   },
@@ -93,13 +93,13 @@ const menu: Menu[] = [
   },
   {
     name: '고객관리',
-    link: '/group-manage',
+    link: '/v1/group-manage',
     icon: ['fas', 'address-book'],
     type: 'nav',
   },
   {
     name: '고객분포',
-    link: '/distribution',
+    link: '/v1/distribution',
     icon: ['fas', 'users'],
     type: 'nav',
   },
@@ -110,7 +110,7 @@ const menu: Menu[] = [
   },
   {
     name: '매장정보',
-    link: 'store-info',
+    link: '/v1/store-info',
     icon: ['fas', 'store-alt'],
     type: 'nav',
   },

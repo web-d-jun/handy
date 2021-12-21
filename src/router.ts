@@ -12,6 +12,7 @@ import GroupManage from '@/views/TheGroupManage.vue';
 import CustomerDistribution from '@/views/TheDistribution.vue';
 import StoreInfo from '@/views/TheStoreInfo.vue';
 import Login from '@/views/TheLogin.vue';
+import Home from '@/views/TheHome.vue';
 
 const requireAuth = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const accessToken = localStorage.getItem('accessToken') || 'bad';
@@ -26,7 +27,7 @@ const requireAuth = (to: RouteLocationNormalized, from: RouteLocationNormalized,
 const routes = [
   {
     path: '/',
-    redirect: '/dashboard',
+    redirect: '/v1/dashboard',
   },
   {
     path: '/login',
@@ -36,89 +37,110 @@ const routes = [
     },
   },
   {
-    path: '/dashboard',
-    component: DashBoard,
-    beforeEnter: requireAuth,
-    meta: {
-      title: '대쉬보드',
-    },
-  },
-  {
-    path: '/ai',
-    component: Ai,
-    meta: {
-      title: '인공지능',
-    },
-  },
-  {
-    path: '/sendSms',
-    component: SendSms,
-    meta: {
-      title: '일반문자',
-    },
-  },
-  {
-    path: '/event',
-    component: Event,
-    meta: {
-      title: '스마트전단',
-    },
-  },
-  {
-    path: '/pop',
-    component: Pop,
-    meta: {
-      title: 'POP',
-    },
-  },
-  {
-    path: '/tery-mall',
-    component: TeryMall,
-    meta: {
-      title: '테리몰',
-    },
-  },
-  {
-    path: '/tery-chat',
-    component: TeryChat,
-    meta: {
-      title: '채팅',
-    },
-  },
-  {
-    path: '/best-mall',
-    component: BestMall,
-    meta: {
-      title: '무조건팔린다',
-    },
-  },
-  {
-    path: '/all-history',
-    component: AllHistory,
-    meta: {
-      title: '내역',
-    },
-  },
-  {
-    path: '/group-manage',
-    component: GroupManage,
-    meta: {
-      title: '고객관리',
-    },
-  },
-  {
-    path: '/distribution',
-    component: CustomerDistribution,
-    meta: {
-      title: '고객분포',
-    },
-  },
-  {
-    path: '/store-info',
-    component: StoreInfo,
-    meta: {
-      title: '매장정보',
-    },
+    path: '/v1',
+    component: Home,
+    children: [
+      {
+        path: '/v1',
+        redirect: '/v1/dashboard',
+      },
+      {
+        path: '/v1/dashboard',
+        component: DashBoard,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '대쉬보드',
+        },
+      },
+      {
+        path: '/v1/ai',
+        component: Ai,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '인공지능',
+        },
+      },
+      {
+        path: '/v1/sendSms',
+        component: SendSms,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '일반문자',
+        },
+      },
+      {
+        path: '/v1/event',
+        component: Event,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '스마트전단',
+        },
+      },
+      {
+        path: '/v1/pop',
+        component: Pop,
+        beforeEnter: requireAuth,
+        meta: {
+          title: 'POP',
+        },
+      },
+      {
+        path: '/v1/tery-mall',
+        component: TeryMall,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '테리몰',
+        },
+      },
+      {
+        path: '/v1/tery-chat',
+        component: TeryChat,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '채팅',
+        },
+      },
+      {
+        path: '/v1/best-mall',
+        component: BestMall,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '무조건팔린다',
+        },
+      },
+      {
+        path: '/v1/all-history',
+        component: AllHistory,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '내역',
+        },
+      },
+      {
+        path: '/v1/group-manage',
+        component: GroupManage,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '고객관리',
+        },
+      },
+      {
+        path: '/v1/distribution',
+        component: CustomerDistribution,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '고객분포',
+        },
+      },
+      {
+        path: '/v1/store-info',
+        component: StoreInfo,
+        beforeEnter: requireAuth,
+        meta: {
+          title: '매장정보',
+        },
+      },
+    ],
   },
 ];
 export const routerHistory = createWebHistory();
