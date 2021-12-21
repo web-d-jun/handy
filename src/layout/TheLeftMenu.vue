@@ -48,7 +48,7 @@ export default defineComponent({
   }
 
   & .nav-title {
-    color: $fourth;
+    color: $third;
   }
 
   & .nav-subtitle {

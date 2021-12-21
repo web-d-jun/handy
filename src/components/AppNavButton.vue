@@ -3,7 +3,7 @@
     <div class="app-button-wrap px-3">
       <router-link :to="`${$attrs.link}`">
         <div
-          class="app-button p-3 cursor-pointer hover:bg-white hover:bg-opacity-20 rounded"
+          class="app-button p-3 cursor-pointer rounded transform hover:translate-x-1.5"
           :class="{ active: $attrs.link === $route.path }"
         >
           <div class="menu-title text-white opacity-80 text-base font-mono">
@@ -29,10 +29,12 @@ export default defineComponent({
   },
 });
 </script>
+
 <style scoped lang="scss">
 .app-button {
   &.active {
     @apply bg-white bg-opacity-20;
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, var(--tw-bg-opacity));
   }
 }
 </style>
