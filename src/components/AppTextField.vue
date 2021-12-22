@@ -1,8 +1,10 @@
 <template>
-  <div class='app-text-field w-full py-3'>
-    <input type="text" class="app-input w-full h-9" />
+  <div class="app-text-field w-full">
+    <div class="app-text-field-wrap py-3 relative">
+      <input :id="props.label" type="text" class="app-input h-9 w-full" />
+      <label :for="props.label" class="app-input-label">{{ props.labelText }}</label>
+    </div>
   </div>
-
 </template>
 
 <script lang="ts">
@@ -10,8 +12,21 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'AppTextField',
-  setup() {
-    return {};
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+    labelText: {
+      type: String,
+      default: '',
+    },
+  },
+  setup(props) {
+    console.log(props);
+    return {
+      props,
+    };
   },
 });
 </script>
@@ -21,9 +36,27 @@ export default defineComponent({
   @apply rounded;
   border: 0;
   outline: 1px solid $fourth;
+  color: $formFieldText;
 
   &:focus {
     outline: 1px solid $third;
+
+    & ~ .app-input-label {
+      color: $third;
+      @apply text-sm;
+      @apply transform -translate-y-2;
+      @apply top-0;
+      transition: font-size 0.3s ease-in-out, transform 0.2s ease-in-out, top 0.3s ease-in-out;
+    }
   }
+}
+
+.app-input-label {
+  @apply absolute;
+  @apply left-1 top-1/2;
+  @apply transform -translate-y-1/2;
+  @apply text-base;
+  transition: font-size 0.3s ease-in-out, transform 0.2s ease-in-out, top 0.3s ease-in-out;
+  color: $fourth;
 }
 </style>
