@@ -7,8 +7,8 @@
           <div>로그인</div>
           <div>아이디가 없으신가요? 무료체험즐기기</div>
         </div>
-        <AppTextField label="idField" labelText="아이디" />
-        <AppTextField label="pwField" labelText="비밀번호" />
+        <AppTextField label="idField" label-text="아이디" />
+        <AppTextField label="pwField" label-text="비밀번호" />
       </div>
     </div>
     <div class="image-contents flex-initial w-2/5"></div>
