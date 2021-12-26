@@ -4,9 +4,9 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('backend:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('backend:server');
+const http = require('http');
 
 /**
  * Get port from environment and store in Express.
@@ -14,7 +14,7 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-console.log('backend server: http://localhost:3000')
+console.log('backend server: http://localhost:3000');
 /**
  * Create HTTP server.
  */
@@ -24,6 +24,22 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+const { Server } = require('socket.io');
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  },
+});
+io.on('connection', (socket) => {
+  console.log('socket connection');
+  socket.on('disconnect', () => {
+    console.log('user disconnect');
+  });
+  socket.on('chat message', (msg) => {
+    console.log(msg, 'backend');
+    io.emit('chat message', msg);
+  });
+});
 
 server.listen(port);
 server.on('error', onError);
