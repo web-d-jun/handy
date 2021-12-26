@@ -5,10 +5,10 @@
         <img class="image-logo" src="/image/logo_iam.png" alt="" />
         <div>
           <div>로그인</div>
-          <div>아이디가 없으신가요? 무료체험즐기기</div>
         </div>
         <AppTextField label="idField" label-text="아이디" />
         <AppTextField label="pwField" label-text="비밀번호" />
+        <AppButton />
       </div>
     </div>
     <div class="image-contents flex-initial w-2/5"></div>
@@ -18,11 +18,13 @@
 import { defineComponent } from 'vue';
 // import faker from 'faker';
 import AppTextField from '@/components/AppTextField.vue';
+import AppButton from '@/components/AppButton.vue';
 
 export default defineComponent({
   name: 'Login',
   components: {
     AppTextField,
+    AppButton,
   },
   setup() {
     // console.log(faker.image.fashion())
