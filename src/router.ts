@@ -153,6 +153,7 @@ export const router = createRouter({
 declare module 'vue-router' {
   interface RouteMeta {
     title?: string;
+    transition?: string;
   }
 }
 

@@ -3,4 +3,31 @@ $secondary: #404d53;
 $third: #9fb7c2;
 $fourth: #a3a3a3;
 $fifth: #e7ead9;
-$formFieldText: rgba(0, 0, 0, 0.8)
+$formFieldText: rgba(0, 0, 0, 0.8);
+
+.btn {
+  &.primary {
+    background-color: $primary;
+    color: $fifth;
+  }
+
+  &.secondary {
+    background-color: $secondary;
+    color: $fifth;
+  }
+
+  &.third {
+    background-color: $third;
+    color: $fifth;
+  }
+
+  &.fifth {
+    background-color: $fifth;
+    color: $fifth;
+  }
+
+  &.fourth {
+    background-color: $fourth;
+    color: $fifth;
+  }
+}

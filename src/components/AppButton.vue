@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="app-button">{{ props.buttonName }}</button>
+  <button type="button" class="app-button hover:opacity-90">{{ props.buttonName }}</button>
 </template>
 <script>
 import { defineComponent } from 'vue';
@@ -20,6 +20,5 @@ export default defineComponent({
 <style lang="scss" scoped>
 .app-button {
   @apply w-full h-9 rounded;
-  background-color: $primary;
 }
 </style>
