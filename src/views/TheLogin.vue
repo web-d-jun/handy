@@ -8,7 +8,9 @@
         <div>
           <div>로그인</div>
         </div>
-        <AppTextField label="idField" label-text="아이디" />
+        <!--        <input type="text" v-model="login.id" />-->
+        <AppTextField v-model="login.id" label="idField" label-text="아이디" />
+        {{ login }}
         <AppTextField label="pwField" label-text="비밀번호" />
         <div class="py-2">
           <AppButton button-name="로그인" class="btn primary-gradient" />
@@ -24,7 +26,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, reactive, ref } from 'vue';
 // import faker from 'faker';
 import AppTextField from '@/components/AppTextField.vue';
 import AppButton from '@/components/AppButton.vue';
@@ -37,7 +39,15 @@ export default defineComponent({
   },
   setup() {
     // console.log(faker.image.fashion())
-    return {};
+    const id = ref('id...');
+    const login = reactive({
+      id: '',
+      pw: '',
+    });
+    return {
+      login,
+      id,
+    };
   },
 });
 </script>

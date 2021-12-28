@@ -1,7 +1,7 @@
 <template>
   <div class="app-text-field w-full">
     <div class="app-text-field-wrap py-3 relative">
-      <input :id="props.label" type="text" class="app-input h-9 w-full" />
+      <input :id="props.label" type="text" class="app-input h-9 w-full" @keyup="returnValue($event.target.value)" />
       <label :for="props.label" class="app-input-label">{{ props.labelText }}</label>
     </div>
   </div>
@@ -13,6 +13,10 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'AppTextField',
   props: {
+    modelValue: {
+      type: String,
+      default: '',
+    },
     label: {
       type: String,
       default: '',
@@ -22,10 +26,15 @@ export default defineComponent({
       default: '',
     },
   },
-  setup(props) {
+  emits: ['update:modelValue'],
+  setup(props, { emit }) {
     console.log(props);
+    const returnValue = (value: string) => {
+      emit('update:modelValue', value);
+    };
     return {
       props,
+      returnValue,
     };
   },
 });
