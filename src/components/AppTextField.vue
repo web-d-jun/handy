@@ -35,14 +35,14 @@ export default defineComponent({
 .app-input {
   @apply rounded;
   border: 0;
-  outline: 1px solid $fourth;
+  outline: 1px solid $primary;
   color: $formFieldText;
 
   &:focus {
-    outline: 1px solid $third;
+    outline: 1px solid $secondary;
 
     & ~ .app-input-label {
-      color: $third;
+      color: $secondary;
       @apply text-sm;
       @apply transform -translate-y-2;
       @apply top-0;
@@ -57,6 +57,6 @@ export default defineComponent({
   @apply transform -translate-y-1/2;
   @apply text-base;
   transition: font-size 0.3s ease-in-out, transform 0.2s ease-in-out, top 0.3s ease-in-out;
-  color: $fourth;
+  color: $primary;
 }
 </style>

@@ -11,7 +11,7 @@
         <AppTextField label="idField" label-text="아이디" />
         <AppTextField label="pwField" label-text="비밀번호" />
         <div class="py-2">
-          <AppButton button-name="로그인" class="btn primary" />
+          <AppButton button-name="로그인" class="btn primary-gradient" />
         </div>
         <div class="py-2">
           <AppButton button-name="홈페이지" class="btn secondary" />

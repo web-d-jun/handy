@@ -34,7 +34,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .left-menu {
-  background-color: $secondary;
+  background-color: $third;
   @apply w-full h-full flex flex-col fixed h-screen overflow-y-auto right-0 left-0 top-0;
   @apply md:w-1/5 md:sticky;
 
@@ -48,7 +48,7 @@ export default defineComponent({
   }
 
   & .nav-title {
-    color: $third;
+    color: $secondary;
   }
 
   & .nav-subtitle {

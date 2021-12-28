@@ -17,6 +17,7 @@ export default defineComponent({
   @apply outline-none select-none;
   @apply rounded-full w-9 h-9 opacity-70 text-xl relative;
   @apply active:bg-gray-400;
+  @apply text-white;
   @apply lg:active:bg-gray-800 lg:hover:bg-black lg:hover:bg-opacity-20;
 }
 </style>

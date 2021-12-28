@@ -1,11 +1,17 @@
-$primary: #3c1c2a;
-$secondary: #404d53;
-$third: #9fb7c2;
+$primary: #360033;
+$secondary: #0B8793;
+$third: #344F5C;
 $fourth: #a3a3a3;
 $fifth: #e7ead9;
 $formFieldText: rgba(0, 0, 0, 0.8);
+$primaryGradient: linear-gradient(to right, #360033, #0b8793);
 
 .btn {
+  &.primary-gradient {
+    background: $primaryGradient;
+    color: $fifth;
+  }
+
   &.primary {
     background-color: $primary;
     color: $fifth;

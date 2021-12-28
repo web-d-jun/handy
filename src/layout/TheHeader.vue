@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header id="header">
     <div class="w-full p-3 shadow flex">
       <AppIconButton @click="handleMenuBar">
         <template #icon>
@@ -54,4 +54,8 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#header {
+  background: $primaryGradient;
+}
+</style>
