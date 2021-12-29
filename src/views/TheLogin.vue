@@ -6,12 +6,10 @@
           <img class="image-logo" src="/image/logo_iam.png" alt="" />
         </div>
         <div>
-          <div>로그인</div>
+          <div>로그인을 하세요.</div>
         </div>
-        <!--        <input type="text" v-model="login.id" />-->
         <AppTextField v-model="login.id" label="idField" label-text="아이디" />
-        {{ login }}
-        <AppTextField label="pwField" label-text="비밀번호" />
+        <AppTextField v-model="login.pw" input-type="password" label="pwField" label-text="비밀번호" />
         <div class="py-2">
           <AppButton button-name="로그인" class="btn primary-gradient" />
         </div>
@@ -26,7 +24,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, ref } from 'vue';
+import { defineComponent, onMounted, reactive } from 'vue';
 // import faker from 'faker';
 import AppTextField from '@/components/AppTextField.vue';
 import AppButton from '@/components/AppButton.vue';
@@ -39,14 +37,12 @@ export default defineComponent({
   },
   setup() {
     // console.log(faker.image.fashion())
-    const id = ref('id...');
     const login = reactive({
       id: '',
       pw: '',
     });
     return {
       login,
-      id,
     };
   },
 });

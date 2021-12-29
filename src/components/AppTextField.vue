@@ -1,7 +1,14 @@
 <template>
   <div class="app-text-field w-full">
     <div class="app-text-field-wrap py-3 relative">
-      <input :id="props.label" type="text" class="app-input h-9 w-full" @keyup="returnValue($event.target.value)" />
+      <input
+        :id="props.label"
+        :type="inputType"
+        class="app-input h-9 w-full"
+        :class="{ actived: props.modelValue }"
+        autocomplete="off"
+        @keyup="emits.returnValue($event.target.value)"
+      />
       <label :for="props.label" class="app-input-label">{{ props.labelText }}</label>
     </div>
   </div>
@@ -25,16 +32,20 @@ export default defineComponent({
       type: String,
       default: '',
     },
+    inputType: {
+      type: String,
+      default: 'text',
+    },
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-    console.log(props);
-    const returnValue = (value: string) => {
-      emit('update:modelValue', value);
+    const emits = {
+      returnValue: (value: string) => emit('update:modelValue', value),
     };
+
     return {
       props,
-      returnValue,
+      emits,
     };
   },
 });
@@ -47,7 +58,8 @@ export default defineComponent({
   outline: 1px solid $primary;
   color: $formFieldText;
 
-  &:focus {
+  &:focus,
+  &.actived {
     outline: 1px solid $secondary;
 
     & ~ .app-input-label {
