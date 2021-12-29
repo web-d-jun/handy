@@ -25,6 +25,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 // import faker from 'faker';
 import AppTextField from '@/components/AppTextField.vue';
 import AppButton from '@/components/AppButton.vue';
@@ -37,11 +38,13 @@ export default defineComponent({
   },
   setup() {
     // console.log(faker.image.fashion())
+    const router = useRouter();
     const login = reactive({
-      id: '',
-      pw: '',
+      id: 'admin',
+      pw: 'admin',
       on: (): void => {
-        console.log('로그인');
+        localStorage.setItem('accessToken', 'good');
+        router.push('/v1')
       },
     });
     const windowOpen = (url: string): void => {

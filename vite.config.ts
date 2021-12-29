@@ -8,8 +8,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [vue(), eslintPlugin()],
   build: {
-    minify: 'terser',
-    cssCodeSplit: true,
+    minify: 'esbuild',
   },
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
@@ -24,5 +23,8 @@ export default defineConfig({
         charset: false,
       },
     },
+  },
+  define: {
+    process: {},
   },
 });

@@ -15,13 +15,13 @@ import Login from '@/views/TheLogin.vue';
 import Home from '@/views/TheHome.vue';
 
 const requireAuth = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  // const accessToken = localStorage.getItem('accessToken') || 'bad';
-  // if (accessToken === 'good') {
+  const accessToken = localStorage.getItem('accessToken') || 'bad';
+  if (accessToken === 'good') {
     next();
-  // } else {
-  //   alert('로그인 유효기간이 지났습니다.');
-  //   next('/login');
-  // }
+  } else {
+    alert('로그인 유효기간이 지났습니다.');
+    next('/login');
+  }
 };
 
 const routes = [
