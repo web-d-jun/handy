@@ -24,7 +24,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, reactive } from 'vue';
+import { defineComponent, reactive } from 'vue';
 // import faker from 'faker';
 import AppTextField from '@/components/AppTextField.vue';
 import AppButton from '@/components/AppButton.vue';
