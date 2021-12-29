@@ -11,10 +11,10 @@
         <AppTextField v-model="login.id" label="idField" label-text="아이디" />
         <AppTextField v-model="login.pw" input-type="password" label="pwField" label-text="비밀번호" />
         <div class="py-2">
-          <AppButton button-name="로그인" class="btn primary-gradient" />
+          <AppButton button-name="로그인" class="btn primary-gradient" @click="login.on" />
         </div>
         <div class="py-2">
-          <AppButton button-name="홈페이지" class="btn secondary" />
+          <AppButton button-name="홈페이지" class="btn secondary" @click="windowOpen('home.sery.co.kr')" />
         </div>
       </div>
     </div>
@@ -40,9 +40,17 @@ export default defineComponent({
     const login = reactive({
       id: '',
       pw: '',
+      on: (): void => {
+        console.log('로그인');
+      },
     });
+    const windowOpen = (url: string): void => {
+      window.open(`https://${url}`);
+    };
+
     return {
       login,
+      windowOpen,
     };
   },
 });

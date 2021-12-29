@@ -4,7 +4,7 @@
       <input
         :id="props.label"
         :type="inputType"
-        class="app-input h-9 w-full"
+        class="app-input h-9 w-full px-2"
         :class="{ actived: props.modelValue }"
         autocomplete="off"
         @keyup="emits.returnValue($event.target.value)"
