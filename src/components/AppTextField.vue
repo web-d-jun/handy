@@ -7,7 +7,7 @@
         class="app-input h-9 w-full px-2"
         :class="{ actived: props.modelValue }"
         autocomplete="off"
-        @keyup="emits.returnValue($event.target.value)"
+        @keyup="emits.returnValue"
       />
       <label :for="props.label" class="app-input-label">{{ props.labelText }}</label>
     </div>
@@ -40,7 +40,9 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(props, { emit }) {
     const emits = {
-      returnValue: (value: string) => emit('update:modelValue', value),
+      returnValue: (event: Event) => {
+        emit('update:modelValue', (event.target as HTMLInputElement).value);
+      },
     };
 
     return {
