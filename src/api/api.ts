@@ -21,7 +21,9 @@ interface ResponseData {
   msg?: string;
 }
 
-const response = (res: AxiosResponse<ResponseData>) => res.data;
+const loginResponse = {
+  postRes: (res: AxiosResponse<ResponseData>) => res.data,
+};
 export const loginApi = {
-  post: async (loginInfo: LoginInfo) => instance.post('/login', loginInfo).then(response),
+  post: async (loginInfo: LoginInfo) => instance.post('/login', loginInfo).then(loginResponse.postRes),
 };

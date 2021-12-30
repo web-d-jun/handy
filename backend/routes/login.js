@@ -20,12 +20,12 @@ router.post('/', function (req, res, next) {
 });
 
 router.get('/check', (req, res) => {
-  const token = req.headers.accesstoken;
+  const token = req.headers.authorization;
   jwt.verify(token, process.env.secret_key, (err, decoded) => {
     if (!err) {
-      res.send({ status: 'success', msg: 'good' });
+      res.send({ state: 'success', msg: 'good' });
     } else {
-      res.status(401).send({ status: 'error', msg: err });
+      res.send({ state: 'error', msg: err });
     }
   });
 });

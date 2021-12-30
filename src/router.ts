@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteLocationNormalized, NavigationGuardNext } from 'vue-router';
+import axios, { AxiosResponse } from 'axios';
 import DashBoard from '@/views/TheDashboard.vue';
 import Ai from '@/views/TheAi.vue';
 import SendSms from '@/views/TheSendSms.vue';
@@ -15,13 +16,30 @@ import Login from '@/views/TheLogin.vue';
 import Home from '@/views/TheHome.vue';
 
 const requireAuth = (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
-  // const accessToken = localStorage.getItem('accessToken') || 'bad';
-  // if (accessToken === 'good') {
-  //   next();
-  // } else {
-  //   alert('로그인 유효기간이 지났습니다.');
-  //   next('/login');
-  // }
+  const accessToken = localStorage.getItem('accessToken') || '';
+  const header = {
+    headers: {
+      Authorization: accessToken,
+    },
+  };
+
+  interface CheckResData {
+    state: string;
+    msg: string;
+  }
+
+  try {
+    axios.get('http://localhost:3000/login/check', header).then((res: AxiosResponse<CheckResData>) => {
+      if (res.data.msg === 'good') {
+        next();
+      } else {
+        alert('로그인 유효기간이 지났습니다.');
+        next('/login');
+      }
+    });
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 const routes = [
