@@ -10,17 +10,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { getUsers2 } from '@/api/testApi';
 
 export default defineComponent({
   name: 'App',
   setup() {
-    const getApi2 = async () => {
-      const users = await getUsers2();
-      console.log(users);
-    };
-    getApi2();
-
     return {};
   },
 });

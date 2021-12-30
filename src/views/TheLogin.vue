@@ -26,6 +26,7 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import { loginApi } from '@/api/api';
 // import faker from 'faker';
 import AppTextField from '@/components/AppTextField.vue';
 import AppButton from '@/components/AppButton.vue';
@@ -42,9 +43,19 @@ export default defineComponent({
     const login = reactive({
       id: 'admin',
       pw: 'admin',
-      on: (): void => {
-        localStorage.setItem('accessToken', 'good');
-        router.push('/v1')
+      on: async () => {
+        try {
+          const result = await loginApi.post(login);
+          if (result.state === 'error') {
+            alert(result.msg);
+            return;
+          }
+          localStorage.setItem('accessToken', result.accessToken);
+
+          router.push('/v1');
+        } catch (e) {
+          console.log(e);
+        }
       },
     });
     const windowOpen = (url: string): void => {
