@@ -15,14 +15,17 @@ interface LoginInfo {
   pw: string;
 }
 
-interface ResponseData {
-  state: string;
-  accessToken: string;
+interface MsgInterface {
   msg?: string;
 }
 
+interface TokenResponse extends MsgInterface {
+  state: string;
+  accessToken: string;
+}
+
 const loginResponse = {
-  postRes: (res: AxiosResponse<ResponseData>) => res.data,
+  postRes: (res: AxiosResponse<TokenResponse>) => res.data,
 };
 export const loginApi = {
   post: async (loginInfo: LoginInfo) => instance.post('/login', loginInfo).then(loginResponse.postRes),
