@@ -12,12 +12,16 @@
             <FontAwesomeIcon :icon="['far', 'bell']" />
           </template>
         </AppIconButton>
-        <AppIconButton>
-          <template #icon>
-            <FontAwesomeIcon :icon="['far', 'user-circle']" />
-            <span class="absolute rounded-full w-2 h-2 bg-green-500 bottom-0 right-0 mr-1 mt-1"></span>
+        <AppMenus>
+          <template #button>
+            <AppIconButton>
+              <template #icon>
+                <FontAwesomeIcon :icon="['far', 'user-circle']" />
+                <span class="absolute rounded-full w-2 h-2 bg-green-500 bottom-0 right-0 mr-1 mt-1"></span>
+              </template>
+            </AppIconButton>
           </template>
-        </AppIconButton>
+        </AppMenus>
       </div>
     </div>
   </header>
@@ -25,11 +29,13 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 import AppIconButton from '@/components/AppIconButton.vue';
+import AppMenus from '@/components/AppMenus.vue';
 
 export default defineComponent({
   name: 'TheHeader',
   components: {
     AppIconButton,
+    AppMenus,
   },
   setup() {
     const openLeftMenuBar = ref(false);
