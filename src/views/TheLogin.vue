@@ -8,8 +8,8 @@
         <div>
           <div>로그인을 하세요.</div>
         </div>
-        <AppTextField v-model="login.id" label="idField" label-text="아이디" />
-        <AppTextField v-model="login.pw" input-type="password" label="pwField" label-text="비밀번호" />
+        <AppTextField v-model="login.id" label="idField" label-text="아이디" @keyup.enter="login.on" />
+        <AppTextField v-model="login.pw" input-type="password" label="pwField" label-text="비밀번호" @keyup.enter="login.on" />
         <div class="py-2">
           <AppButton button-name="로그인" class="btn primary-gradient" @click="login.on" />
         </div>
@@ -44,6 +44,15 @@ export default defineComponent({
       id: 'admin',
       pw: 'admin',
       on: async () => {
+        if (!login.id) {
+          alert('아이디를 입력해주세요.');
+          return;
+        }
+        if (!login.pw) {
+          alert('비밀번호를 입력해주세요.');
+          return;
+        }
+
         try {
           const result = await loginApi.post(login);
           if (result.state === 'error') {
