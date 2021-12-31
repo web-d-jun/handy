@@ -40,7 +40,7 @@ export default defineComponent({
   setup() {
     // console.log(faker.image.fashion())
     const router = useRouter();
-    const login = reactive({
+    const login = reactive<LoginInfo>({
       id: 'admin',
       pw: 'admin',
       on: async () => {

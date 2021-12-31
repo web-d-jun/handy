@@ -5,3 +5,9 @@ interface Menu {
   icon?: string[];
   type: string;
 }
+
+interface LoginInfo {
+  id: string;
+  pw: string;
+  on: () => Promise<void>;
+}
