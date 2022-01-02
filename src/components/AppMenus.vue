@@ -2,9 +2,11 @@
   <div class="app-menus">
     <slot name="button" :user="{ test: 11 }"></slot>
     <div class="list-contents">
-      <ui class="menu-list">
-        <li v-for="(item, index) in props.list" :key="index">{{ item }}</li>
-      </ui>
+      <div class="menu-list">
+        <div v-for="(item, index) in props.list" :key="index" class="item">
+          {{ item }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -30,10 +32,12 @@ export default defineComponent({
 .app-menus {
   @apply relative;
   .list-contents {
-    // @apply hidden;
-    @apply absolute;
+    min-width: 121px;
+    @apply absolute right-0;
     .menu-list {
-      list-style-type: none;
+      .item {
+        @apply w-auto h-auto;
+      }
     }
   }
 }
