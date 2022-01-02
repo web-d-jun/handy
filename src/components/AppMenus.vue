@@ -1,6 +1,9 @@
 <template>
   <div class="app-menus">
-    <slot name="button"></slot>
+    <slot name="button" :user="{ test: 11 }"></slot>
+    <div class="list-contents">
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -8,7 +11,16 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'AppMenus',
-  setup() {
+  props: {
+    list: {
+      type: Array,
+      default () {
+        return [];
+      },
+    },
+  },
+  setup(props) {
+    console.log(props);
     return {};
   },
 });
@@ -16,5 +28,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .app-menus {
   @apply relative;
+  .list-contents {
+    @apply hidden;
+  }
 }
 </style>

@@ -12,7 +12,7 @@
             <FontAwesomeIcon :icon="['far', 'bell']" />
           </template>
         </AppIconButton>
-        <AppMenus>
+        <AppMenus :list="menuList">
           <template #button>
             <AppIconButton>
               <template #icon>
@@ -39,6 +39,7 @@ export default defineComponent({
   },
   setup() {
     const openLeftMenuBar = ref(false);
+    const menuList: string[] = ['매장정보', '로그아웃'];
 
     const handleMenuBar = () => {
       openLeftMenuBar.value = !openLeftMenuBar.value;
@@ -56,6 +57,7 @@ export default defineComponent({
     });
     return {
       handleMenuBar,
+      menuList,
     };
   },
 });
