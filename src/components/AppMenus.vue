@@ -2,7 +2,9 @@
   <div class="app-menus">
     <slot name="button" :user="{ test: 11 }"></slot>
     <div class="list-contents">
-      <slot></slot>
+      <ui class="menu-list">
+        <li v-for="(item, index) in props.list" :key="index">{{ item }}</li>
+      </ui>
     </div>
   </div>
 </template>
@@ -14,14 +16,13 @@ export default defineComponent({
   props: {
     list: {
       type: Array,
-      default () {
+      default() {
         return [];
       },
     },
   },
   setup(props) {
-    console.log(props);
-    return {};
+    return { props };
   },
 });
 </script>
@@ -29,7 +30,11 @@ export default defineComponent({
 .app-menus {
   @apply relative;
   .list-contents {
-    @apply hidden;
+    // @apply hidden;
+    @apply absolute;
+    .menu-list {
+      list-style-type: none;
+    }
   }
 }
 </style>
