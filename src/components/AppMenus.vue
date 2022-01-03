@@ -1,5 +1,5 @@
 <template>
-  <div class="app-menus">
+  <div class="app-menus" :class="{ show: showList }" @click="showList = !showList">
     <slot name="button" :user="{ test: 11 }"></slot>
     <div class="list-contents">
       <div class="menu-list">
@@ -11,7 +11,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'AppMenus',
@@ -24,19 +24,25 @@ export default defineComponent({
     },
   },
   setup(props) {
-    return { props };
+    const showList = ref(false);
+    return { props, showList };
   },
 });
 </script>
 <style lang="scss" scoped>
 .app-menus {
   @apply relative;
+  &.show {
+    .list-contents {
+      opacity: 1;
+    }
+  }
   .list-contents {
-    min-width: 121px;
-    @apply absolute right-0;
+    @apply absolute right-0 px-3 bg-white shadow rounded;
+    opacity: 0;
     .menu-list {
       .item {
-        @apply w-auto h-auto;
+        @apply w-auto h-9 leading-9 whitespace-nowrap cursor-pointer text-sm;
       }
     }
   }
