@@ -12,7 +12,7 @@
             <FontAwesomeIcon :icon="['far', 'bell']" />
           </template>
         </AppIconButton>
-        <AppMenus :list="menuList">
+        <AppMenus>
           <template #button>
             <AppIconButton>
               <template #icon>
@@ -21,6 +21,13 @@
               </template>
             </AppIconButton>
           </template>
+          <div class="list-contents">
+            <div class="menu-list">
+              <div v-for="(item, index) in menuList" :key="index" class="item" @click="selectMenu.store(item)">
+                {{ item.name }}
+              </div>
+            </div>
+          </div>
         </AppMenus>
       </div>
     </div>
@@ -39,18 +46,36 @@ export default defineComponent({
   },
   setup() {
     const openLeftMenuBar = ref(false);
-    const menuList: string[] = ['매장정보', '로그아웃'];
+    const menuList: object[] = [
+      {
+        value: 'storeInfo',
+        name: '매장정보',
+      },
+      {
+        value: 'logout',
+        name: '로그아웃',
+      },
+    ];
 
     const handleMenuBar = () => {
       openLeftMenuBar.value = !openLeftMenuBar.value;
-      // console.log('handleMenuBar', openLeftMenuBar.value);
       const leftMenuBar = document.querySelector('.left-menu');
       if (openLeftMenuBar.value) {
         leftMenuBar?.classList.add('opened');
       } else {
         leftMenuBar?.classList.remove('opened');
       }
-      // console.log(leftMenuBar);
+    };
+    const selectMenu = {
+      store: (obj: { value: string; name: string }) => {
+        const { value } = obj;
+        if (value === 'storeInfo') {
+          console.log('매장정보보기');
+        }
+        if (value === 'logout') {
+          console.log('logout');
+        }
+      },
     };
     onMounted(() => {
       handleMenuBar();
@@ -58,6 +83,7 @@ export default defineComponent({
     return {
       handleMenuBar,
       menuList,
+      selectMenu,
     };
   },
 });
