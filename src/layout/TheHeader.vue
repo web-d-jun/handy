@@ -46,7 +46,11 @@ export default defineComponent({
   },
   setup() {
     const openLeftMenuBar = ref(false);
-    const menuList: object[] = [
+    interface MenuList {
+      value: string;
+      name: string;
+    }
+    const menuList: MenuList[] = [
       {
         value: 'storeInfo',
         name: '매장정보',
