@@ -1,5 +1,5 @@
 <template>
-  <div class="app-menus" :class="{ show: showList }" @click="showList = !showList">
+  <div class="app-menus toggle" :class="{ show: showList }" @click="showList = !showList">
     <slot name="button" :user="{ test: 11 }"></slot>
     <slot></slot>
   </div>

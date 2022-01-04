@@ -35,6 +35,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import AppIconButton from '@/components/AppIconButton.vue';
 import AppMenus from '@/components/AppMenus.vue';
 
@@ -45,6 +46,7 @@ export default defineComponent({
     AppMenus,
   },
   setup() {
+    const router = useRouter();
     const openLeftMenuBar = ref(false);
     interface MenuList {
       value: string;
@@ -77,7 +79,8 @@ export default defineComponent({
           console.log('매장정보보기');
         }
         if (value === 'logout') {
-          console.log('logout');
+          localStorage.removeItem('accessToken');
+          router.push('/login');
         }
       },
     };

@@ -38,6 +38,17 @@ library.add(
   faBell,
   faUserCircle,
 );
+// document.addEventListener('click', (event: Event) => {
+//   const toggle = document.querySelector('.toggle');
+//   const showElement = document.querySelector('.show');
+//   const target =  (event.target) as HTMLDivElement
+//   console.log(target.parentElement?.classList)
+//   console.log(target.parentElement?.classList.contains('btn-active'))
+//   // if (showElement === event.target) {
+//   //   console.log(showElement, event.target)
+//   //   showElement?.classList.remove('show');
+//   // }
+// });
 
 const app = createApp(App);
 
