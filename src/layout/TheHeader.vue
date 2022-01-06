@@ -32,18 +32,25 @@
       </div>
     </div>
   </header>
+  <AppDialog>
+    <template #header> header </template>
+    <template #body> body </template>
+    <template #footer> footer </template>
+  </AppDialog>
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import AppIconButton from '@/components/AppIconButton.vue';
 import AppMenus from '@/components/AppMenus.vue';
+import AppDialog from '@/components/AppDialog.vue';
 
 export default defineComponent({
   name: 'TheHeader',
   components: {
     AppIconButton,
     AppMenus,
+    AppDialog,
   },
   setup() {
     const router = useRouter();
