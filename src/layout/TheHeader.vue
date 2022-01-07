@@ -33,9 +33,11 @@
     </div>
   </header>
   <AppDialog>
-    <template #header> header </template>
-    <template #body> body </template>
-    <template #footer> footer </template>
+    <template #modal>
+      <div class="modal-container">
+        <div>dsadsadas</div>
+      </div>
+    </template>
   </AppDialog>
 </template>
 <script lang="ts">
@@ -105,5 +107,9 @@ export default defineComponent({
 <style scoped lang="scss">
 #header {
   background: $primaryGradient;
+}
+.modal-container {
+  width: 600px;
+  height: 600px;
 }
 </style>
