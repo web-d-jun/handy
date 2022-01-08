@@ -32,7 +32,7 @@
       </div>
     </div>
   </header>
-  <AppDialog>
+  <AppDialog name="nameTest">
     <template #modal>
       <div class="modal-container">
         <div>dsadsadas</div>
@@ -86,6 +86,9 @@ export default defineComponent({
         const { value } = obj;
         if (value === 'storeInfo') {
           console.log('매장정보보기');
+          const elem = document.querySelector('div[name=nameTest]') as HTMLDivElement;
+          console.log(elem);
+          elem.style.display = 'block';
         }
         if (value === 'logout') {
           localStorage.removeItem('accessToken');

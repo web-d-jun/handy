@@ -1,5 +1,5 @@
 <template>
-  <div class="app-dialog-container-wrap" :class="{ show: show }">
+  <div class="app-dialog-container-wrap" :name="props.nameTest" :class="{ show: show }" @click="dialog.hide">
     <div class="app-dialog-container">
       <slot name="modal"></slot>
     </div>
@@ -10,9 +10,22 @@ import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'AppDialog',
-  setup() {
+  props: {
+    nameTest: {
+      type: String,
+      default: '',
+    },
+  },
+  setup(props) {
     const show = ref(false);
-    return { show };
+    const dialog = {
+      hide: (event: Event) => {
+        const target = event.target as HTMLDivElement;
+        target.style.display = 'none';
+      },
+    };
+
+    return { props, show, dialog };
   },
 });
 </script>
