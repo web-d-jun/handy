@@ -36,7 +36,7 @@ export default defineComponent({
 .left-menu {
   background-color: $third;
   @apply w-full h-full flex flex-col fixed h-screen overflow-y-auto right-0 left-0 top-0;
-  @apply md:w-1/5 md:sticky;
+  @apply md:w-1/5 lg:sticky;
 
   &:not(.opened) {
     transform: translateX(-100%);

@@ -32,7 +32,7 @@
       </div>
     </div>
   </header>
-  <AppDialog name="nameTest">
+  <AppDialog :name="'nameTest'">
     <template #modal>
       <div class="modal-container">
         <div>dsadsadas</div>
@@ -41,7 +41,7 @@
   </AppDialog>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref, inject } from 'vue';
 import { useRouter } from 'vue-router';
 import AppIconButton from '@/components/AppIconButton.vue';
 import AppMenus from '@/components/AppMenus.vue';
@@ -55,7 +55,10 @@ export default defineComponent({
     AppDialog,
   },
   setup() {
+    
     const router = useRouter();
+    const modal = inject<ModalInterface | undefined>('$modal');
+
     const openLeftMenuBar = ref(false);
     interface MenuList {
       value: string;
@@ -86,9 +89,7 @@ export default defineComponent({
         const { value } = obj;
         if (value === 'storeInfo') {
           console.log('매장정보보기');
-          const elem = document.querySelector('div[name=nameTest]') as HTMLDivElement;
-          console.log(elem);
-          elem.style.display = 'block';
+          modal?.show('nameTest')
         }
         if (value === 'logout') {
           localStorage.removeItem('accessToken');

@@ -54,5 +54,18 @@ const app = createApp(App);
 
 app.component('FontAwesomeIcon', FontAwesomeIcon);
 
+const modal: ModalInterface = {
+  show: (key: string) => {
+    console.log(key);
+    const elem = document.querySelector(`div[name=${key}]`) as HTMLDivElement;
+    elem.style.display = 'block';
+  },
+  hide: (key: string) => {
+    console.log(key);
+    const elem = document.querySelector(`div[name=${key}]`) as HTMLDivElement;
+    elem.style.display = 'none';
+  },
+};
+app.provide('$modal', modal);
 app.use(router);
 app.mount('#app');

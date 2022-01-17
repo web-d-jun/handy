@@ -11,3 +11,8 @@ interface LoginInfo {
   pw: string;
   on: () => Promise<void>;
 }
+
+interface ModalInterface {
+  show: (key: string) => void;
+  hide: (key: string) => void;
+}
