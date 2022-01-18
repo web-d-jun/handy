@@ -59,11 +59,15 @@ const modal: ModalInterface = {
     console.log(key);
     const elem = document.querySelector(`div[name=${key}]`) as HTMLDivElement;
     elem.style.display = 'block';
+    const slibling = elem.nextSibling as HTMLDivElement;
+    slibling.style.display = 'block';
   },
   hide: (key: string) => {
     console.log(key);
     const elem = document.querySelector(`div[name=${key}]`) as HTMLDivElement;
     elem.style.display = 'none';
+    const slibling = elem.nextSibling as HTMLDivElement;
+    slibling.style.display = 'none';
   },
 };
 app.provide('$modal', modal);

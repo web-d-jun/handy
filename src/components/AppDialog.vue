@@ -20,8 +20,9 @@ export default defineComponent({
     const dialog = {
       hide: (event: Event) => {
         const target = event.target as HTMLDivElement;
-        console.log('???');
         target.style.display = 'none';
+        const sibling = target.nextSibling as HTMLDivElement;
+        sibling.style.display = 'none';
       },
     };
 
